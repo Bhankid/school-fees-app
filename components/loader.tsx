@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export function Loader() {
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full">
+    <div className="flex flex-col items-center justify-center min-h-screen w-full">
       <motion.div
         animate={{
           scale: [1, 1.2, 1],

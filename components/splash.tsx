@@ -27,7 +27,7 @@ export function Splash() {
         className="flex flex-col items-center"
       >
         <div className="relative w-32 h-32 mb-6">
-          <Image src="/placeholder.svg?height=128&width=128" alt="SchoolSave Logo" fill className="object-contain" />
+          <Image src="/logo.jpeg" alt="SchoolSave Logo" fill className="object-contain" />
         </div>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

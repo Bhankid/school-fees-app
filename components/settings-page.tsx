@@ -9,7 +9,7 @@ export function SettingsPage() {
   const [user, setUser] = useState({
     name: "Alfred Bhankid",
     email: "alfred.bhankid@example.com",
-    avatar: "/placeholder.svg?height=100&width=100",
+    avatar: "/Logo.jpg",
   })
 
   const settingsSections = [
