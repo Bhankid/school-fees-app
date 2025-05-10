@@ -7,8 +7,8 @@ import { User, Bell, Shield, HelpCircle, LogOut, ChevronRight } from "lucide-rea
 
 export function SettingsPage() {
   const [user, setUser] = useState({
-    name: "Alfred Bhankid",
-    email: "alfred.bhankid@example.com",
+    name: "Engineer Bhankid",
+    email: "alfred.bhankid@gmail.com",
     avatar: "/Logo.jpg",
   })
 
