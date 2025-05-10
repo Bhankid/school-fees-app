@@ -8,8 +8,18 @@ import { Plus, BookOpen, Pencil, School, GraduationCap } from "lucide-react"
 
 export function ChildrenPage() {
   const [loading, setLoading] = useState(true)
-  const [data, setData] = useState(null)
-  const [activeChild, setActiveChild] = useState(null)
+  interface Child {
+    id: number
+    name: string
+    age: number
+    school: string
+    grade: string
+    image: string
+    expenses: { id: number; name: string; amount: number; date: string }[]
+    savings: { current: number; goal: number }
+  }
+  const [data, setData] = useState<{ children: Child[] } | null>(null)
+  const [activeChild, setActiveChild] = useState<Child | null>(null)
 
   useEffect(() => {
     // Simulate API call
@@ -27,7 +37,7 @@ export function ChildrenPage() {
             age: 8,
             school: "Greenwood Elementary",
             grade: "3rd",
-            image: "/placeholder.svg?height=100&width=100",
+            image: "/Emma.jpeg",
             expenses: [
               { id: 1, name: "School Fees", amount: 300, date: "2025-04-10" },
               { id: 2, name: "Books", amount: 75, date: "2025-04-05" },
@@ -40,7 +50,7 @@ export function ChildrenPage() {
             age: 12,
             school: "Riverside Middle School",
             grade: "7th",
-            image: "/placeholder.svg?height=100&width=100",
+            image: "/Noah.jpeg",
             expenses: [
               { id: 3, name: "School Fees", amount: 450, date: "2025-04-15" },
               { id: 4, name: "Uniform", amount: 85, date: "2025-04-01" },
@@ -100,7 +110,7 @@ export function ChildrenPage() {
           transition={{ delay: 0.3, duration: 0.5 }}
           className="flex gap-3 overflow-x-auto pb-2 mb-6"
         >
-          {data.children.map((child, index) => (
+          {data?.children?.map((child, index) => (
             <motion.button
               key={child.id}
               whileTap={{ scale: 0.95 }}
